@@ -201,7 +201,7 @@ main .hero_section {
   margin-bottom: 32px;
   color: white;
   position: relative;
-  width: max-content;
+  max-width: max-content;
   padding-bottom: 8px;
 }
 .hero_content {
