@@ -1,6 +1,6 @@
 
 .menu_popup {
-    padding-top: 2rem;
+    padding: 2rem 1rem;
     top: 0;
     height: 100vh;
     z-index: 999;
@@ -18,6 +18,7 @@
   .items_pop {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
     font-size: 2rem;
   }
   .items_pop a {
@@ -40,8 +41,17 @@
   }
   
   .cta_pop a {
-    display: block;
-    padding: 10px 20px;
     font-size: 1.5rem;
+    font-weight: bold;
+  padding: 10px 20px;
+  border-top-left-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  border-bottom-right-radius: 8px;
+  background-color: var(--headings_color);
+  }
+  .cta_pop a:hover{
+    border-radius: 0px;
+    background-color: var(--nav_links_color);
+  color: var(--headings_color);
   }
   
