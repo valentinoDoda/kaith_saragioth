@@ -67,6 +67,7 @@ header {
   background: var(--linear_header);
 }
 header {
+  z-index: 4;
   width: 100%;
   position: fixed;
   top: 0;
