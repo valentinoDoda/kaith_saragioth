@@ -1,258 +1,429 @@
 <!DOCTYPE html>
 <html lang="el" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Καίτη Σαραγιώτη | Modern Pianist Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        :root {
-            --bg-color: #F9F8F6; /* Soft Bone/Paper color */
-            --headings: #002B36;
-            --paragraph: #1e262b;   
-            --accent-color: #B45309;
-            --btn-text: #F1E6C9;
-            --btn-bg: #1A3A3A;
-    
-        }
-        h1,h2,h3,h4{
-            color: var(--headings) !important;
-        }
-        p{
-            color: var(--paragraph);
-        }
-        span{ color: var(--accent-color);}
-        body {
-            background-image: linear-gradient(193deg,rgba(241, 230, 201, 0.82) 0%, rgba(211, 189, 135, 0.52) 100%), url("images/image-bg.jpg");
-            background-attachment: fixed;
-            background-position: left;
-            background-size: cover;
-           
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-        }
-        .c_border{
-            border: 1px solid var(--accent-color);
-        }
-        .syne { font-family: 'Syne', sans-serif; }
-        
-        /* Typography Effects */
-        .text-outline-dark {
-            -webkit-text-stroke: 2px var(--accent-color);
-            color: transparent;
-        }
-        /* Bento Grid Modernized */
-        .bento-card {
-            background: white;
-            border: 1px solid #EAE9E4;
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-        }
+      @import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Alegreya:ital,wght@0,400..900;1,400..900&family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap");
 
-        .bento-card:hover {
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-            transform: translateY(-5px);
-            border-color: var(--text-color);
-        }
+      :root {
+        --font-primary: "Advent Pro", sans-serif;
 
-        .nav-link {
-            color : var(--headings);
-            position: relative;
-            font-size: 14px;
-            overflow: hidden;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--accent-color);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.4s ease;
-        }
-        .nav-link:hover::after {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
+        --bg-color: #f9f8f6; /* Soft Bone/Paper color */
+        --headings: #002b36;
+        --paragraph: #1e262b;
+        --accent-color: #b45309;
+        --btn-text: #f1e6c9;
+        --btn-bg: #1a3a3a;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--font-primary);
+        color: var(--headings) !important;
+      }
+      h1 {
+        font-size: clamp(3.8rem, 8vw, 12rem) !important ;
+      }
+      p {
+        color: var(--paragraph);
+      }
+      span {
+        font-family: "Advent Pro", sans-serif;
+        color: var(--accent-color);
+      }
+      body {
+        background-image: linear-gradient(
+            193deg,
+            rgba(241, 230, 201, 0.82) 0%,
+            rgba(211, 189, 135, 0.52) 100%
+          ),
+          url("images/image-bg.jpg");
+        background-attachment: fixed;
+        background-position: left;
+        background-size: cover;
 
-        /* Custom Selection */
-        /* ::selection { background: var(--text-color); color: white; } */
+        font-family: "Inter", sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+      }
+      .c_border {
+        border: 1px solid var(--accent-color);
+      }
+
+      /* Typography Effects */
+      .text-outline-dark {
+        -webkit-text-stroke: 2px var(--accent-color);
+        color: transparent;
+      }
+      /* Bento Grid Modernized */
+      .bento-card {
+        background: white;
+        border: 1px solid #eae9e4;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .bento-card:hover {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        transform: translateY(-5px);
+        border-color: var(--text-color);
+      }
+
+      .nav-link {
+        font-family: "Advent Pro", sans-serif;
+        color: var(--headings);
+        position: relative;
+        font-size: 14px;
+        overflow: hidden;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--accent-color);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.4s ease;
+      }
+      .nav-link:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+      /* Custom Selection */
+      /* ::selection { background: var(--text-color); color: white; } */
     </style>
-</head>
-<body class="antialiased">
-
-    <header class="fixed top-0 w-full z-50 bg-[#F9F8F6]/80 backdrop-blur-lg border-b border-black/5">
-        <div class="container mx-auto px-6 py-5 flex justify-between items-center">
-            <div class="syne text-2xl text-[--headings] font-extrabold tracking-tighter">
-                Κ<span class="text-[--accent-color]">.</span>Σ
-            </div>
-            <nav class="hidden md:flex space-x-12 text-[11px] uppercase items-center tracking-[0.25em] font-bold">
-                <a href="#bio" class="nav-link py-1">Βιογραφικο</a>
-                <a href="#gallery" class="nav-link py-1">Γκαλερι</a>
-                <a href="#contact" class="nav-link bg-[#1A3A3A] text-white px-6 py-3 rounded-full hover:bg-[--accent-color] transition duration-300">Επικοινωνία</a>
-            </nav>
-            <div class="md:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
-                </svg>
-            </div>
+  </head>
+  <body class="antialiased">
+    <header
+      class="fixed top-0 w-full z-50 bg-[#F9F8F6]/80 backdrop-blur-lg border-b border-black/5"
+    >
+      <div
+        class="container mx-auto px-6 py-5 flex justify-between items-center"
+      >
+        <div class="nav-link text-4xl text-[--headings] font-extrabold tracking-tighter">
+          Κ<span class="text-[--accent-color]">.</span>Σ
         </div>
+        <nav
+          class="hidden md:flex space-x-12 text-[11px] uppercase items-center tracking-[0.25em] font-bold"
+        >
+          <a href="#bio" class="nav-link py-1">Βιογραφικο</a>
+          <a href="#gallery" class="nav-link py-1">Γκαλερι</a>
+          <a
+            href="#contact"
+            class="nav-link bg-[#1A3A3A] text-white px-6 py-3 rounded-full hover:bg-[--accent-color] transition duration-300"
+            >Επικοινωνία</a
+          >
+        </nav>
+        <div class="md:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h8m-8 6h16"
+            />
+          </svg>
+        </div>
+      </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative min-h-screen flex items-center pt-[160px] pb-20 px-6">
-        <div class="container mx-auto">
-            <div class="relative">
-                <h1 class="syne text-[6vw] text-[--headings] leading-[0.95] uppercase font-extrabold tracking-tighter">
-                    ΚΑΙΤΗ <br> ΣΑΡΑΓΙΩΤΗ 
-                        <br><span class="text-sm md:text-xl font-light tracking-widest text-[--accent-color] normal-case italic font-serif">Πιανίστρια & Καθηγήτρια</span>
-                    </span>
-                </h1>
-                
-                <div class="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
-                    <div class="lg:col-span-4 order-2 lg:order-1">
-                        <p class="text-lg md:text-xl text-[--paragraph] leading-relaxed font-light max-w-sm">
-                            Ερμηνεύοντας το κλασικό ρεπερτόριο μέσα από ένα σύγχρονο πρίσμα αισθητικής και απόλυτης δεξιοτεχνίας.
-                        </p>
-                        <div class="mt-8">
-                            <a href="#gallery" class="inline-flex items-center gap-4 group">
-                                <span class="c_border w-12 h-12 rounded-full flex items-center justify-center group-hover:bg-[--accent-color] group-hover:text-white transition-all">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                    </svg>
-                                </span>
-                                <span class="nav_link text-[--headings] font-bold tracking-widest">Δείτε το έργο μου</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="lg:col-span-8 order-1 lg:order-2">
-                        <div class="overflow-hidden rounded-[2rem] aspect-1/1 shadow-sm">   
-                            <img src="https://images.unsplash.com/photo-1552422535-c45813c61732?auto=format&fit=crop&q=80&w=1500" class="w-full h-full object-cover" alt="Kaiti Saragioti">
-                        </div>
-                    </div>
-                </div>
+    <section
+      id="hero"
+      class="relative min-h-screen flex items-center pt-[160px] pb-20 px-6"
+    >
+      <div class="container mx-auto">
+        <div class="relative">
+          <div>
+            <h1 class="text-[--headings] leading-[0.85] uppercase font-bold">
+              ΚΑΙΤΗ <br />
+              ΣΑΡΑΓΙΩΤΗ
+            </h1>
+            <span
+              class="text-sm md:text-xl font-bold tracking-widest text-[--accent-color] normal-case italic"
+              >Πιανίστρια & Καθηγήτρια</span
+            >
+          </div>
+          <div class="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+            <div class="lg:col-span-4 order-2 lg:order-1">
+              <p
+                class="text-lg md:text-xl text-[--paragraph] leading-relaxed font-light max-w-sm"
+              >
+                Ερμηνεύοντας το κλασικό ρεπερτόριο μέσα από ένα σύγχρονο πρίσμα
+                αισθητικής και απόλυτης δεξιοτεχνίας.
+              </p>
+              <div class="mt-8">
+                <a href="#gallery" class="inline-flex items-center gap-4 group">
+                  <span
+                    class="c_border w-12 h-12 rounded-full flex items-center justify-center group-hover:bg-[--accent-color] group-hover:text-white transition-all"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="nav_link text-[--headings] font-bold tracking-widest"
+                    >Δείτε το έργο μου</span
+                  >
+                </a>
+              </div>
             </div>
+            <div class="lg:col-span-8 order-1 lg:order-2">
+              <div class="overflow-hidden rounded-[2rem] aspect-1/1 shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1552422535-c45813c61732?auto=format&fit=crop&q=80&w=1500"
+                  class="w-full h-full object-cover"
+                  alt="Kaiti Saragioti"
+                />
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Bio Section -->
     <section id="bio" class="py-32 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-24">
-                <div class="relative">
-                    <div class="aspect-[1/1] overflow-hidden rounded-[3rem]">
-                        <img src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover" alt="Kaiti Profile">
-                    </div>
-                    <div class="absolute -bottom-10 -right-10 bg-[--accent-color] text-white p-12 rounded-full">
-                        <p class="syne text-4xl text-[--bg-color] uppercase">20+</p>
-                        <p class="text-[10px] text-[--bg-color] tracking-widest uppercase opacity-60">Χρόνια στο πιάνο</p>
-                    </div>
-                </div>
-                <div>
-                    <span class="text-[--accent-color] font-bold uppercase tracking-[0.3em] text-xs">Η Διαδρομη μου</span>
-                    <h2 class="syne text-5xl  uppercase font-bold mt-3 mb-10 leading-none">Βιογραφικό</h2>
-                    <div class="space-y-6 text-gray-700 text-lg leading-relaxed font-light">
-                        <p>Με σπουδές στο κλασικό πιάνο και βαθιά αγάπη για τον πειραματισμό, η Καίτη Σαραγιώτη έχει δημιουργήσει μια καλλιτεχνική ταυτότητα που ξεχωρίζει για την ειλικρίνεια και την τεχνική της αρτιότητα.</p>
-                        <p>Έχει συνεργαστεί με κορυφαίους μαέστρους και έχει παρουσιάσει σόλο ρεσιτάλ σε όλη την Ευρώπη, εστιάζοντας στη σύνδεση της μουσικής με την ανθρώπινη εμπειρία.</p>
-                    </div>
-                </div>
+      <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-24">
+          <div class="relative">
+            <div class="aspect-[1/1] overflow-hidden rounded-[3rem]">
+              <img
+                src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&q=80&w=800"
+                class="w-full h-full object-cover"
+                alt="Kaiti Profile"
+              />
             </div>
+            <div
+              class="absolute -bottom-10 -right-10 bg-[--accent-color] text-white p-12 rounded-full"
+            >
+              <p class="text-4xl text-[--bg-color] uppercase">20+</p>
+              <p
+                class="text-[10px] text-[--bg-color] tracking-widest uppercase opacity-60"
+              >
+                Χρόνια στο πιάνο
+              </p>
+            </div>
+          </div>
+          <div>
+            <span
+              class="text-[--accent-color] font-bold uppercase tracking-[0.3em] text-xs"
+              >Η Διαδρομη μου</span
+            >
+            <h2 class="text-6xl md:text-8xl uppercase font-bold mt-3 mb-10 leading-none">
+              Βιογραφικό
+            </h2>
+            <div
+              class="space-y-6 text-gray-700 text-lg leading-relaxed font-light"
+            >
+              <p>
+                Με σπουδές στο κλασικό πιάνο και βαθιά αγάπη για τον
+                πειραματισμό, η Καίτη Σαραγιώτη έχει δημιουργήσει μια
+                καλλιτεχνική ταυτότητα που ξεχωρίζει για την ειλικρίνεια και την
+                τεχνική της αρτιότητα.
+              </p>
+              <p>
+                Έχει συνεργαστεί με κορυφαίους μαέστρους και έχει παρουσιάσει
+                σόλο ρεσιτάλ σε όλη την Ευρώπη, εστιάζοντας στη σύνδεση της
+                μουσικής με την ανθρώπινη εμπειρία.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Gallery Section (Bento Grid) -->
     <section id="gallery" class="py-32">
-        <div class="container mx-auto px-6">
-            <div class="mb-20 flex flex-col md:flex-row justify-between items-end gap-6">
-                <h2 class="syne text-6xl md:text-8xl uppercase font-bold leading-[0.8] tracking-tighter">
-                    Γκαλερι <br> <span class="text-outline-dark">Media</span>
-                </h2>
-                <div class="h-[1px] flex-grow bg-black/10 mx-12 hidden lg:block"></div>
-                <p class="text-gray-400 uppercase text-xs tracking-widest font-bold">Μουσική & Εικόνες</p>
-            </div>
-
-            <!-- Bento Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <!-- YouTube Video Main -->
-                <div class="md:col-span-3 bento-card rounded-[2.5rem] overflow-hidden group">
-                    <div class="aspect-video">
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/5_9S0O8Cps0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-
-                <!-- Info Box -->
-                <div class="bento-card rounded-[2.5rem] p-10 flex flex-col justify-center bg-[#121212] text-white">
-                    <p class="syne text-3xl leading-tight uppercase mb-4">Live at <br> Megaron</p>
-                    <p class="text-sm opacity-60 italic font-light">Chopin, Op. 9 No. 2</p>
-                </div>
-
-                <!-- Photo 1 -->
-                <div class="bento-card rounded-[2.5rem] overflow-hidden aspect-square">
-                    <img src="https://images.unsplash.com/photo-1514119412350-e174d90d280e?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover">
-                </div>
-
-                <!-- YouTube Video 2 -->
-                <div class="md:col-span-2 bento-card rounded-[2.5rem] overflow-hidden">
-                    <div class="aspect-video h-full">
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/9XInS_X6A6U" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-
-                <!-- Photo 2 -->
-                <div class="bento-card rounded-[2.5rem] overflow-hidden aspect-square">
-                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover">
-                </div>
-            </div>
+      <div class="container mx-auto px-6">
+        <div
+          class="mb-20 flex flex-col md:flex-row justify-between items-end gap-6"
+        >
+          <h2
+            class="text-6xl md:text-8xl uppercase font-bold leading-[0.8] tracking-tighter"
+          >
+            Γκαλερι <br />
+            <span class="text-outline-dark">Media</span>
+          </h2>
+          <div
+            class="h-[1px] flex-grow bg-black/10 mx-12 hidden lg:block"
+          ></div>
+          <p class="text-gray-400 uppercase text-xs tracking-widest font-bold">
+            Μουσική & Εικόνες
+          </p>
         </div>
+
+        <!-- Bento Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <!-- YouTube Video Main -->
+          <div
+            class="md:col-span-3 bento-card rounded-[2.5rem] overflow-hidden group"
+          >
+            <div class="aspect-video">
+              <iframe
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/5_9S0O8Cps0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+
+          <!-- Info Box -->
+          <div
+            class="bento-card rounded-[2.5rem] p-10 flex flex-col justify-center bg-[#121212] text-white"
+          >
+            <p class="text-3xl leading-tight uppercase mb-4">
+              Live at <br />
+              Megaron
+            </p>
+            <p class="text-sm opacity-60 italic font-light">
+              Chopin, Op. 9 No. 2
+            </p>
+          </div>
+
+          <!-- Photo 1 -->
+          <div
+            class="bento-card rounded-[2.5rem] overflow-hidden aspect-square"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1514119412350-e174d90d280e?auto=format&fit=crop&q=80&w=800"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <!-- YouTube Video 2 -->
+          <div
+            class="md:col-span-2 bento-card rounded-[2.5rem] overflow-hidden"
+          >
+            <div class="aspect-video h-full">
+              <iframe
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/9XInS_X6A6U"
+                title="YouTube video player"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+
+          <!-- Photo 2 -->
+          <div
+            class="bento-card rounded-[2.5rem] overflow-hidden aspect-square"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=800"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-32 px-6">
-        <div class="container mx-auto">
-            <div class="bg-black text-white rounded-[4rem] p-12 md:p-24 overflow-hidden relative">
-                <!-- Abstract background circle -->
-                <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-600 rounded-full blur-[120px] opacity-20"></div>
+      <div class="container mx-auto">
+        <div
+          class="bg-black text-white rounded-[4rem] p-12 md:p-24 overflow-hidden relative"
+        >
+          <!-- Abstract background circle -->
+          <div
+            class="absolute -top-24 -right-24 w-96 h-96 bg-blue-600 rounded-full blur-[120px] opacity-20"
+          ></div>
 
-                <div class="relative z-10 grid lg:grid-cols-2 gap-20 items-center">
-                    <div>
-                        <h2 class="syne text-6xl md:text-8xl uppercase font-bold leading-tight mb-8">
-                            Let's <br>Connect
-                        </h2>
-                        <div class="space-y-4">
-                            <p class="text-xl md:text-2xl font-light text-gray-400">Για συνεργασίες και εμφανίσεις:</p>
-                            <a href="mailto:hello@kaitisaragioti.gr" class="text-2xl md:text-4xl font-bold hover:text-blue-500 transition">info@kaitisaragioti.gr</a>
-                        </div>
-                    </div>
-                    <form class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <input type="text" placeholder="Όνομα" class="w-full bg-white/5 border-b border-white/20 py-4 px-2 focus:outline-none focus:border-blue-500 transition">
-                            <input type="email" placeholder="Email" class="w-full bg-white/5 border-b border-white/20 py-4 px-2 focus:outline-none focus:border-blue-500 transition">
-                        </div>
-                        <textarea placeholder="Το μήνυμά σας" rows="4" class="w-full bg-white/5 border-b border-white/20 py-4 px-2 focus:outline-none focus:border-blue-500 transition"></textarea>
-                        <button class="px-12 py-5 bg-white text-black syne font-bold uppercase rounded-full hover:bg-blue-600 hover:text-white transition-all duration-500 w-full md:w-auto">
-                            Αποστολη
-                        </button>
-                    </form>
-                </div>
+          <div class="relative z-10 grid lg:grid-cols-2 gap-20 items-center">
+            <div>
+              <h2
+                class="text-6xl md:text-8xl uppercase font-bold leading-tight mb-8"
+              >
+                Let's <br />Connect
+              </h2>
+              <div class="space-y-4">
+                <p class="text-xl md:text-2xl font-light text-gray-400">
+                  Για συνεργασίες και εμφανίσεις:
+                </p>
+                <a
+                  href="mailto:hello@kaitisaragioti.gr"
+                  class="text-2xl md:text-4xl font-bold hover:text-blue-500 transition"
+                  >info@kaitisaragioti.gr</a
+                >
+              </div>
             </div>
+            <form class="space-y-6">
+              <div class="grid md:grid-cols-2 gap-6">
+                <input
+                  type="text"
+                  placeholder="Όνομα"
+                  class="w-full bg-white/5 border-b border-white/20 py-4 px-2 focus:outline-none focus:border-blue-500 transition"
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  class="w-full bg-white/5 border-b border-white/20 py-4 px-2 focus:outline-none focus:border-blue-500 transition"
+                />
+              </div>
+              <textarea
+                placeholder="Το μήνυμά σας"
+                rows="4"
+                class="w-full bg-white/5 border-b border-white/20 py-4 px-2 focus:outline-none focus:border-blue-500 transition"
+              ></textarea>
+              <button
+                class="px-12 py-5 bg-white text-black font-bold uppercase rounded-full hover:bg-blue-600 hover:text-white transition-all duration-500 w-full md:w-auto"
+              >
+                Αποστολη
+              </button>
+            </form>
+          </div>
         </div>
+      </div>
     </section>
 
     <footer class="py-12 border-t border-black/5">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p class="syne font-bold text-sm tracking-tighter">ΚΑΙΤΗ ΣΑΡΑΓΙΩΤΗ</p>
-            <div class="flex space-x-8 text-[10px] uppercase tracking-widest font-bold opacity-50">
-                <a href="#">Instagram</a>
-                <a href="#">Spotify</a>
-                <a href="#">YouTube</a>
-            </div>
-            <p class="text-[10px] uppercase tracking-widest opacity-40">© 2024 / All rights reserved</p>
+      <div
+        class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6"
+      >
+        <p class="font-bold text-sm tracking-tighter">ΚΑΙΤΗ ΣΑΡΑΓΙΩΤΗ</p>
+        <div
+          class="flex space-x-8 text-[10px] uppercase tracking-widest font-bold opacity-50"
+        >
+          <a href="#">Instagram</a>
+          <a href="#">Spotify</a>
+          <a href="#">YouTube</a>
         </div>
+        <p class="text-[10px] uppercase tracking-widest opacity-40">
+          © 2024 / All rights reserved
+        </p>
+      </div>
     </footer>
-
-</body>
+  </body>
 </html>
