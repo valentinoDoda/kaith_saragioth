@@ -16,6 +16,13 @@
             --btn-bg: #1A3A3A;
     
         }
+        h1,h2,h3,h4{
+            color: var(--headings) !important;
+        }
+        p{
+            color: var(--paragraph);
+        }
+        span{ color: var(--accent-color);}
         body {
             background-image: linear-gradient(193deg,rgba(241, 230, 201, 0.82) 0%, rgba(211, 189, 135, 0.52) 100%), url("images/image-bg.jpg");
             background-attachment: fixed;
@@ -42,7 +49,7 @@
             border: 1px solid #EAE9E4;
             transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
         }
-        
+
         .bento-card:hover {
             box-shadow: 0 20px 40px rgba(0,0,0,0.05);
             transform: translateY(-5px);
@@ -50,6 +57,7 @@
         }
 
         .nav-link {
+            color : var(--headings);
             position: relative;
             font-size: 14px;
             overflow: hidden;
@@ -79,7 +87,7 @@
 
     <header class="fixed top-0 w-full z-50 bg-[#F9F8F6]/80 backdrop-blur-lg border-b border-black/5">
         <div class="container mx-auto px-6 py-5 flex justify-between items-center">
-            <div class="syne text-2xl font-extrabold tracking-tighter">
+            <div class="syne text-2xl text-[--headings] font-extrabold tracking-tighter">
                 Κ<span class="text-[--accent-color]">.</span>Σ
             </div>
             <nav class="hidden md:flex space-x-12 text-[11px] uppercase items-center tracking-[0.25em] font-bold">
@@ -117,7 +125,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                                     </svg>
                                 </span>
-                                <span class="nav_link uppercase text-xs font-bold tracking-widest">Δειτε το εργο μου</span>
+                                <span class="nav_link text-[--headings] font-bold tracking-widest">Δείτε το έργο μου</span>
                             </a>
                         </div>
                     </div>
@@ -140,8 +148,8 @@
                         <img src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover" alt="Kaiti Profile">
                     </div>
                     <div class="absolute -bottom-10 -right-10 bg-[--accent-color] text-white p-12 rounded-full">
-                        <p class="syne text-4xl uppercase">20+</p>
-                        <p class="text-[10px] tracking-widest uppercase opacity-60">Years of Music</p>
+                        <p class="syne text-4xl text-[--bg-color] uppercase">20+</p>
+                        <p class="text-[10px] text-[--bg-color] tracking-widest uppercase opacity-60">Χρόνια στο πιάνο</p>
                     </div>
                 </div>
                 <div>
