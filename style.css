@@ -437,6 +437,7 @@ header {
 }
 
 /* Gallery Section */
+/* Υπάρχον CSS (Διατηρείται) */
 .gallery-section {
   padding-top: 6rem;
 }
@@ -459,15 +460,137 @@ header {
   letter-spacing: -0.025em;
   margin: 0;
 }
+
+/* --- ΝΕΟ CSS ΓΙΑ MASONRY LAYOUT --- */
 .all_images {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
+  /* Αντί για grid, ορίζουμε πόσες στήλες θέλουμε */
+  column-count: 3; 
+  column-gap: 1.5rem; /* Το κενό δεξιά-αριστερά ανάμεσα στις στήλες */
 }
-.all_images img{
+
+.all_images img {
+ width: 100%;
+  height: auto; /* Επιτρέπει στην εικόνα να κρατήσει το πραγματικό της ύψος */
+  display: block;
+  margin-bottom: 1.5rem; /* Το κενό πάνω-κάτω ανάμεσα στις εικόνες */
+  
+  /* Το μυστικό: Αποτρέπει το "κόψιμο" μιας εικόνας αν πέσει στην αλλαγή της στήλης */
+  break-inside: avoid; 
+  
+  border-radius: 8px;
   cursor: pointer;
-  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Εφέ όταν περνάει το ποντίκι πάνω από τις μικρογραφίες */
+.all_images img:hover {
+ transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 900px) {
+  .all_images {
+    column-count: 2; /* 2 στήλες στα tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .all_images {
+    column-count: 1; /* 1 στήλη στα κινητά */
+  }
+}
+
+/* --- CSS ΓΙΑ ΤΟ LIGHTBOX (MODAL) --- */
+.lightbox {
+  display: none; /* Κρυφό από προεπιλογή */
+  position: fixed;
+  z-index: 9999; /* Πάνω από όλα */
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
   height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.95); /* Σχεδόν μαύρο φόντο */
+  
+  /* Flex για κεντράρισμα της μεγάλης εικόνας */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Το περιεχόμενο του modal */
+.lightbox-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 1200px;
+  max-height: 85vh; /* Να μην ξεπερνά το ύψος της οθόνης */
+  text-align: center;
+}
+
+/* Η μεγάλη εικόνα */
+#lightbox-image {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain; /* Εξασφαλίζει ότι φαίνεται όλη η εικόνα */
+    border-radius: 4px;
+    box-shadow: 0 0 50px rgba(255,255,255,0.1);
+}
+
+/* Κουμπί Κλεισίματος (X) */
+.close {
+  color: #f1f1f1;
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  z-index: 10001;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Κουμπιά Πλοήγησης (Next/Prev) */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  z-index: 10001;
+  background-color: rgba(0,0,0,0.3); /* Ελαφρύ φόντο για να φαίνονται */
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .all_videos{
