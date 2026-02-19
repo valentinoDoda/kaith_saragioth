@@ -906,6 +906,7 @@ footer {
   .bio-grid, .header-container, .gallery-header{
     padding-right: 0;
     padding-left: 0;
+    
   }
 }
 @media (min-width: 1024px) {
