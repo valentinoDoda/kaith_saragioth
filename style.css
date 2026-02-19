@@ -325,6 +325,44 @@ header {
   gap: 6rem;
   padding: 0 1.5rem;
 }
+/* --- SLIDING FROM RIGHT CSS --- */
+
+.bio-image {
+  /* Σταθερές διαστάσεις και σχήμα */
+  aspect-ratio: 1/1;
+  border-radius: 3rem;
+  
+  /* Κρύβουμε τις εικόνες που βρίσκονται εκτός πλαισίου (δεξιά/αριστερά) */
+  overflow: hidden;
+  position: relative;
+}
+
+.bio-image img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+  /* --- Η ΛΟΓΙΚΗ ΤΗΣ ΘΕΣΗΣ --- */
+  /* Από προεπιλογή, όλες οι εικόνες περιμένουν στα ΔΕΞΙΑ (εκτός πλαισίου) */
+  left: 100%;
+  
+  /* Ρύθμιση ταχύτητας κίνησης (0.8 δευτερόλεπτα) */
+  transition: left 0.8s ease-in-out;
+}
+
+/* Η εικόνα που βλέπουμε τώρα (στο κέντρο) */
+.bio-image img.active {
+  left: 0;
+  z-index: 2;
+}
+
+/* Η εικόνα που μόλις έφυγε (πάει αριστερά) */
+.bio-image img.exit {
+  left: -100%;
+  z-index: 1;
+}
 
 .bio-image-container {
   position: relative;
@@ -343,6 +381,7 @@ header {
 }
 
 .bio-badge {
+  z-index: 2;
   position: absolute;
   bottom: -2.5rem;
   left: 0;
