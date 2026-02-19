@@ -662,54 +662,124 @@ header {
 
 /* Contact Section */
 .contact-section {
-  padding: 8rem 1.5rem;
+  padding: 6rem 1.5rem;
 }
 
-.contact-container {
-  background: var(--headings);
-  color: white;
-  border-radius: 4rem;
-  padding: 3rem;
-  overflow: hidden;
+.contact-card {
+  background-color: var(--headings); /* Σκούρο φόντο από τις μεταβλητές σου */
+  border-radius: 3rem;
+  padding: 4rem 2rem;
   position: relative;
+  overflow: hidden; /* Για να μην βγαίνει το glow απ' έξω */
 }
-.contact-container h2, .contact-container p{
-  color: white !important;
+
+/* Το CSS Abstract Glow Effect */
+.contact-glow {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 300px;
+  height: 300px;
+  background-color: var(--accent-color);
+  filter: blur(100px);
+  opacity: 0.3;
+  border-radius: 50%;
+  z-index: 1;
 }
-.contact-grid {
+
+.contact-content {
   position: relative;
-  z-index: 10;
+  z-index: 2; /* Πάνω από το glow */
   display: grid;
-  gap: 5rem;
-  align-items: center;
+  gap: 4rem;
 }
 
-.contact-title {
-  font-size: 3.75rem;
+/* --- Αριστερό Μέρος (Τίτλοι) --- */
+.contact-label {
+  color: var(--accent-color);
   text-transform: uppercase;
   font-weight: bold;
-  line-height: 1.25;
-  margin-bottom: 2rem;
-  margin-top: 0;
-}
-
-.contact-subtitle {
-  font-size: 1.25rem;
-  font-weight: 300;
-  color: #9ca3af;
+  letter-spacing: 0.1em;
+  font-size: 14px;
+  display: block;
   margin-bottom: 1rem;
 }
 
-.contact-email {
-  font-size: 1.5rem;
+.contact-title {
+  color: white !important;
+  font-size: 3rem;
+  text-transform: uppercase;
   font-weight: bold;
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s;
+  line-height: 1.1;
+  margin: 0 0 1.5rem 0;
 }
 
-.contact-email:hover {
+.contact-subtitle {
+  color: #9ca3af !important;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 400px;
+  margin: 0;
+}
+
+/* --- Δεξί Μέρος (Links) --- */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.item-label {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.item-link {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.item-link:hover {
   color: var(--accent-color);
+}
+
+/* Το Κουμπί του YouTube */
+.youtube-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.youtube-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent-color);
+  transform: translateY(-3px); /* Ελαφρύ σήκωμα στο hover */
+}
+
+.yt-icon {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
 }
 
 /* Footer */
@@ -793,41 +863,51 @@ footer {
     font-size: 6rem;
   }
 
-
-
-  .contact-container {
-    padding: 6rem;
-  }
-
-  .contact-title {
-    font-size: 6rem;
-  }
-
-  .contact-subtitle {
-    font-size: 1.5rem;
-  }
-
-  .contact-email {
-    font-size: 2.5rem;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .form-button {
-    width: auto;
-  }
-
   .footer-container {
     flex-direction: row;
   }
 }
 
+@media (min-width: 992px) {
+  .contact-section {
+    padding: 8rem 0; /* Αφαιρούμε το padding δεξιά/αριστερά, το αναλαμβάνει το container */
+  }
+
+  .contact-card {
+    padding: 6rem;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr 1fr; /* Σπάει σε 2 στήλες */
+    align-items: center;
+    gap: 6rem;
+  }
+
+  .contact-title {
+    font-size: 5rem; /* Τεράστιος τίτλος στο desktop όπως τον είχες */
+  }
+
+  .contact-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .item-link {
+    font-size: 2rem;
+  }
+  
+  .contact-glow {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+
+@media (min-width: 1224px){
+  .bio-grid, .header-container, .gallery-header{
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
 @media (min-width: 1024px) {
   .hero-grid {
     display: flex;
