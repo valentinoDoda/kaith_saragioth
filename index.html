@@ -10,31 +10,31 @@
     <style></style>
   </head>
   <body>
-    <header>
-      <div class="container header-container">
-        <div class="nav-link logo">Κ<span>.</span>Σ</div>
-        <nav class="nav-desktop">
-          <a href="#bio" class="nav-link">Βιογραφικο</a>
-          <a href="#gallery" class="nav-link">Γκαλερι</a>
-          <a href="#contact" class="nav-link nav-contact">Επικοινωνία</a>
-        </nav>
-        <div class="mobile-menu">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h8m-8 6h16"
-            />
-          </svg>
-        </div>
-      </div>
-    </header>
+  <header>
+  <div class="container header-container">
+    <div class="nav-link logo">Κ<span>.</span>Σ</div>
+    
+    <nav class="nav-desktop">
+      <a href="#bio" class="nav-link">Βιογραφικο</a>
+      <a href="#gallery" class="nav-link">Γκαλερι</a>
+      <a href="#contact" class="nav-link nav-contact">Επικοινωνία</a>
+    </nav>
+    
+    <div class="mobile-menu" id="menu-toggle" style="cursor: pointer; z-index: 60;">
+      <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-overlay" id="mobile-overlay">
+  <nav class="mobile-nav-list">
+    <a href="#bio" class="mobile-link">Βιογραφικο</a>
+    <a href="#gallery" class="mobile-link">Γκαλερι</a>
+    <a href="#contact" class="mobile-link nav-contact">Επικοινωνία</a>
+  </nav>
+</div>
 
     <!-- Hero Section -->
     <section id="hero" class="hero-section">
@@ -318,6 +318,47 @@ document.addEventListener("DOMContentLoaded", function() {
     const newSrc = galleryImages[currentIndex].src; 
     lightboxImage.src = newSrc;
   }
+  
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggleBtn = document.getElementById("menu-toggle");
+  const menuIcon = document.getElementById("menu-icon");
+  const mobileOverlay = document.getElementById("mobile-overlay");
+  const mobileLinks = document.querySelectorAll(".mobile-link");
+
+  let isOpen = false;
+
+  // Τα δύο σχήματα του SVG (Αρχικό vs X)
+  const pathHamburger = "M4 6h16M4 12h8m-8 6h16";
+  const pathClose = "M6 18L18 6M6 6l12 12";
+
+  function toggleMenu() {
+    isOpen = !isOpen; // Αλλάζουμε την κατάσταση
+    
+    if (isOpen) {
+      // Άνοιγμα Μενού
+      mobileOverlay.classList.add("is-open");
+      document.body.style.overflow = "hidden"; // Σταματάει το scroll
+      // Αλλάζουμε το SVG σε X
+      menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${pathClose}"/>`;
+    } else {
+      // Κλείσιμο Μενού
+      mobileOverlay.classList.remove("is-open");
+      document.body.style.overflow = "auto"; // Επανέρχεται το scroll
+      // Επαναφέρουμε το SVG στο αρχικό του
+      menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${pathHamburger}"/>`;
+    }
+  }
+
+  // Όταν πατάμε το εικονίδιο στο header
+  menuToggleBtn.addEventListener("click", toggleMenu);
+
+  // Όταν πατάμε ένα link μέσα στο μενού
+  mobileLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      if (isOpen) toggleMenu(); // Το κλείνουμε
+    });
+  });
+});
 </script>
   </body>
 </html>

@@ -199,7 +199,62 @@ header {
   letter-spacing: 0.25em;
   font-weight: bold;
 }
+/* --- FULL HEIGHT MOBILE MENU --- */
+/* --- FULL HEIGHT MOBILE MENU --- */
 
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  /* Βάζουμε το φόντο σου, ίσως λίγο πιο συμπαγές για να μη διαφανίζει το περιεχόμενο από πίσω */
+  background-color: var(--bg-color); 
+
+  /* ΣΗΜΑΝΤΙΚΟ: Το z-index είναι μικρότερο από το header (που είναι 50) */
+  z-index: 40; 
+  padding-top: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  
+  /* Κρύβουμε το μενού στα δεξιά της οθόνης */
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1); /* Πιο smooth κίνηση */
+}
+
+.mobile-overlay.is-open {
+  transform: translateX(0);
+}
+
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  text-align: center;
+}
+
+.mobile-link {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: var(--headings);
+  font-family: var(--font-primary);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.mobile-link:hover, .mobile-link:active {
+  color: var(--accent-color);
+}
+
+@media (min-width: 768px) {
+  .mobile-overlay {
+    display: none !important;
+  }
+}
 .nav-contact {
   background-color: #1a3a3a;
   color: white;
@@ -226,9 +281,10 @@ header {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 0 1.5rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
   padding-top: 140px;
-  padding-bottom: 60px;
+  padding-bottom: 140px;
 }
 
 .hero-grid {
@@ -599,7 +655,7 @@ header {
   flex-wrap: wrap;
 }
 .all_videos iframe{
-  max-width: 350px;
+  width: 100%;
   height: 350px;
   border-radius: 2rem;
 }
@@ -703,6 +759,10 @@ footer {
 
 /* Responsive Styles */
 @media (min-width: 768px) {
+  .all_videos iframe{
+    width: auto !important;
+    max-width: 350px;
+  }
   .nav-desktop {
     display: flex;
   }
@@ -769,12 +829,7 @@ footer {
 }
 
 @media (min-width: 1024px) {
-  .hero-section {
-    padding-top: 80px;
-  }
-
   .hero-grid {
-  
     display: flex;
     justify-content: space-between;
   }
